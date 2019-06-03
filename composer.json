@@ -1,0 +1,22 @@
+{
+    "name": "fjw/color-compare",
+    "type": "library",
+    "description": "My first test",
+    "keywords": ["color", "compare", "difference"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fjw",
+            "email": "fjw@garx.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ColorCompare": "src/"
+        }
+    }
+}
