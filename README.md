@@ -15,7 +15,7 @@ composer require fjw/color-compare
 ## How to use
 
 You can get the visual difference (distance) of two colors easily:
-```
+```php
 use ColorCompare\Color;
 
 $color1 = new Color("#aaff05);
@@ -25,7 +25,7 @@ $difference = $color1->getDifference($color2);
 ```
 
 You can convert each format into one another:
-```
+```php
 use ColorCompare\Color;
 
 $color = new Color("#aaff05);
@@ -38,7 +38,7 @@ $din99 = $color->getDin99();
 ```
 
 You can create the color object by Hex, RGB, HSL and LAB:
-```
+```php
 use ColorCompare\Color;
 
 $color = new Color([
@@ -54,7 +54,7 @@ $hex = $color->getHex();
 DIN-99 differences can better calculate the human visual difference than LAB with delta-E. There are also superior distance calculations like CIE94 or CIEDE2000 but these are complicated and need intensive calculations.
 With DIN-99 the calculation is done beforehand and needs less ressources. When your color is already converted into DIN-99 you can just calculate the euklidean distance and get the same quality.
 
-```
+```php
 sqrt(($c2["L99"] - $c1["L99"])**2 +
     ($c2["a99"] - $c1["a99"])**2 +
     ($c2["b99"] - $c1["b99"])**2);
