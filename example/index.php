@@ -9,6 +9,12 @@ require __DIR__.'/../vendor/autoload.php';
 
 $color = new \ColorCompare\Color("#ff00aa");
 
-$rgb = $color->getRgb();
+$rgb = $color->getLab();
 
 dump($color);
+?>
+<style>
+    body {
+      background-color: #f0a;;
+    }
+</style>
