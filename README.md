@@ -31,11 +31,10 @@ use ColorCompare\Color;
 $color = new Color("#aaff05");
 
 $hex = $color->getHex(); // just to show off, it already was Hex ;)
-$rgb = $color->getRgb();
-$hsl = $color->getHsl();
-$lab = $color->getLab();
-$din99 = $color->getDin99();
-```
+$rgb = $color->getRgb(); // [ "r" => 170, "g" => 255, "b" => 5 ]
+$hsl = $color->getHsl(); // [ "h" => 80.4, "s" => 1.0, "l" => 0.51 ]
+$lab = $color->getLab(); // [ "L" => 91.72, "a" => -54.41, "b" => 87.65 ]
+$din99 = $color->getDin99(); // [ "L99" => 94.51, "a99" => -12.31, "b99" => 30.39 ]```
 
 You can create the color object by Hex, RGB, HSL and LAB:
 ```php
