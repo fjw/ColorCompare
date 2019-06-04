@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.com/fjw/ColorCompare.svg?branch=master)](https://travis-ci.com/fjw/ColorCompare)
 
-ColorCompare is a library to convert colors from hex, RGB, HSL, CIE L\*a\*b\* (LAB) and DIN-99 into one another.
+ColorCompare is a library to convert colors from hex, RGB, HSL, CIE L\*a\*b\* (LAB) and DIN-99 into one another and calculate color distances (human visual difference).
 
 
 You can get the library from [packagist](https://packagist.org/packages/fjw/color-compare):
