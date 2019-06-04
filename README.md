@@ -18,8 +18,8 @@ You can get the visual difference (distance) of two colors easily:
 ```php
 use ColorCompare\Color;
 
-$color1 = new Color("#aaff05);
-$color2 = new Color("#CCC);
+$color1 = new Color("#aaff05");
+$color2 = new Color("#CCC");
 
 $difference = $color1->getDifference($color2);
 ```
@@ -28,7 +28,7 @@ You can convert each format into one another:
 ```php
 use ColorCompare\Color;
 
-$color = new Color("#aaff05);
+$color = new Color("#aaff05");
 
 $hex = $color->getHex(); // just to show off, it already was Hex ;)
 $rgb = $color->getRgb();
