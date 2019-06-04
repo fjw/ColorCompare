@@ -1,8 +1,8 @@
 {
     "name": "fjw/color-compare",
     "type": "library",
-    "description": "My first test",
-    "keywords": ["color", "compare", "difference"],
+    "description": "A library for converting colors (Hex, RGB, HSL, CIELAB (LAB), DIN-99) and calculating color distances based on DIN-99.",
+    "keywords": ["color", "compare", "visual difference", "rgb", "lab", "hsl", "din99", "color distance", "distance", "php"],
     "license": "MIT",
     "authors": [
         {
