@@ -63,7 +63,9 @@ sqrt(($c2["L99"] - $c1["L99"])**2 +
 This is a huge advantage! If you would like, per example, make a client side filter of colored products (or whatever) you can convert your data into DIN-99 on the server side and only need to do the easier euklidean calculation in your JavaScript.
 
 Sources (german):
+
 http://www.germancolorgroup.de/html/Vortr_02_pdf/GCG_%202002_%20Buering.pdf
+
 https://de.wikipedia.org/wiki/DIN99-Farbraum
 
 ## Example Code
