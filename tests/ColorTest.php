@@ -100,6 +100,6 @@ class ColorTest extends TestCase
         $color1 = new Color("#ff00aa");
         $color2 = new Color("#afc");
 
-        $this->assertEquals(49.73, round($color1->getDifference($color2), 2));
+        $this->assertEquals(62.75, round($color1->getDifference($color2), 2));
     }
 }
