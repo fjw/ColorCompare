@@ -165,6 +165,15 @@ class Color
 
     // -------------------------------------------------------------------------------------------
 
+    /**
+     * Gets the color as RGB array.
+     *
+     * r: 0-255, g: 0-255, b: 0-255
+     *
+     * example: ["r" => 255, "g" => 0, "b" => 100]
+     *
+     * @return  array
+     */
     public function getRgb()
     {
 
@@ -190,6 +199,13 @@ class Color
         return $this->rgb;
     }
 
+    /**
+     * Gets the color as hexadecimal string.
+     *
+     * example: "#a0f3ee"
+     *
+     * @return  string
+     */
     public function getHex()
     {
         if ($this->hex) {
@@ -200,6 +216,15 @@ class Color
         return $this->hex;
     }
 
+    /**
+     * Gets the color as HSL array.
+     *
+     * h: 0-360, s: 0-1, l: 0-1
+     *
+     * example: ["h" => 360, "s" => 0.8, "l" => 1]
+     *
+     * @return  array
+     */
     public function getHsl()
     {
 
@@ -211,6 +236,15 @@ class Color
         return $this->hsl;
     }
 
+    /**
+     * Gets the color as CIELAB array.
+     *
+     * L: 0-100, a: approx. -86 - 98, b: approx. -108 - 94
+     *
+     * example: ["L" => 100, "a" => -120, "b" => 75]
+     *
+     * @return  array
+     */
     public function getLab()
     {
 
@@ -222,6 +256,15 @@ class Color
         return $this->lab;
     }
 
+    /**
+     * Gets the color as DIN-99 array.
+     *
+     * L: 0-100, a: approx. -50 - 40, b: approx. -40 - 40
+     *
+     * example: ["L99" => 100, "a99" => -120, "b99" => 75]
+     *
+     * @return  array
+     */
     public function getDin99()
     {
 
@@ -235,6 +278,12 @@ class Color
 
     // -------------------------------------------------------------------------------------------
 
+    /**
+     * Converts Hex to RGB
+     *
+     * @param  string  $hex
+     * @return  array
+     */
     private static function hexToRgb($hex)
     {
         sscanf($hex, "#%02x%02x%02x", $r, $g, $b);
@@ -242,12 +291,24 @@ class Color
         return ["r" => $r, "g" => $g, "b" => $b];
     }
 
+    /**
+     * Converts RGB to Hex
+     *
+     * @param  array  $rgb
+     * @return  string
+     */
     private static function rgbToHex($rgb)
     {
 
         return sprintf("#%02x%02x%02x", $rgb["r"], $rgb["g"], $rgb["b"]);
     }
 
+    /**
+     * Converts RGB to HSL
+     *
+     * @param  array  $rgb
+     * @return  array
+     */
     private static function rgbToHsl($rgb)
     {
         $r = $rgb["r"] / 255;
@@ -297,6 +358,12 @@ class Color
         return ["h" => $h * 360, "s" => $s, "l" => $l];
     }
 
+    /**
+     * Converts HSL to RGB
+     *
+     * @param  array  $hsl
+     * @return  array
+     */
     private static function hslToRgb($hsl)
     {
         $h = $hsl["h"] / 360;
@@ -346,6 +413,12 @@ class Color
         return ["r" => intval(round($r)), "g" => intval(round($g)), "b" => intval(round($b))];
     }
 
+    /**
+     * Converts RGB to CIELAB
+     *
+     * @param  array  $rgb
+     * @return  array
+     */
     private static function rgbToLab($rgb)
     {
 
@@ -414,6 +487,12 @@ class Color
         return ["L" => $l, "a" => $a, "b" => $b];
     }
 
+    /**
+     * Converts CIELAB to RGB
+     *
+     * @param  array  $lab
+     * @return  array
+     */
     private static function labToRgb($lab)
     {
 
@@ -472,6 +551,12 @@ class Color
         return ["r" => intval(round($r * 255)), "g" => intval(round($g * 255)), "b" => intval(round($b * 255))];
     }
 
+    /**
+     * Converts CIELAB to DIN-99
+     *
+     * @param  array  $lab
+     * @return  array
+     */
     private static function labToDin99($lab)
     {
 

@@ -55,9 +55,9 @@ class ColorTest extends TestCase
     {
         $color = new Color("#ff00aa");
 
-        $this->assertEquals(57, $color->getLab()["l"]);
-        $this->assertEquals(86, $color->getLab()["a"]);
-        $this->assertEquals(-17, $color->getLab()["b"]);
+        $this->assertEquals(56.25, round($color->getLab()["L"],2));
+        $this->assertEquals(88.12, round($color->getLab()["a"],2));
+        $this->assertEquals(-18.84, round($color->getLab()["b"],2));
     }
 
 }
