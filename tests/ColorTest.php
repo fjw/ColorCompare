@@ -55,9 +55,51 @@ class ColorTest extends TestCase
     {
         $color = new Color("#ff00aa");
 
-        $this->assertEquals(56.25, round($color->getLab()["L"],2));
-        $this->assertEquals(88.12, round($color->getLab()["a"],2));
-        $this->assertEquals(-18.84, round($color->getLab()["b"],2));
+        $this->assertEquals(56.25, round($color->getLab()["L"], 2));
+        $this->assertEquals(88.12, round($color->getLab()["a"], 2));
+        $this->assertEquals(-18.84, round($color->getLab()["b"], 2));
     }
 
+    public function testGetDin99()
+    {
+        $color = new Color("#ff00aa");
+
+        $this->assertEquals(67.10, round($color->getDin99()["L99"], 2));
+        $this->assertEquals(32.74, round($color->getDin99()["a99"], 2));
+        $this->assertEquals(-12.22, round($color->getDin99()["b99"], 2));
+    }
+
+    public function testConvertToHSLandBack()
+    {
+        $hex = "#ff00aa";
+
+        $c1 = new Color($hex);
+
+        $hsl = $c1->getHsl();
+
+        $c2 = new Color($hsl);
+
+        $this->assertEquals($hex, $c2->getHex());
+    }
+
+    public function testConvertToLABandBack()
+    {
+        $hex = "#ff00aa";
+
+        $c1 = new Color($hex);
+
+        $lab = $c1->getLab();
+
+        $c2 = new Color($lab);
+
+        $this->assertEquals($hex, $c2->getHex());
+    }
+
+    public function testGetDifference()
+    {
+        $color1 = new Color("#ff00aa");
+        $color2 = new Color("#afc");
+
+        $this->assertEquals(49.73, round($color1->getDifference($color2), 2));
+    }
 }

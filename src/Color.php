@@ -257,7 +257,7 @@ class Color
     }
 
     /**
-     * Gets the color as DIN-99 array.
+     * Gets the color as DIN-99 array. (http://www.germancolorgroup.de/html/Vortr_02_pdf/GCG_%202002_%20Buering.pdf)
      *
      * L: 0-100, a: approx. -50 - 40, b: approx. -40 - 40
      *
@@ -274,6 +274,24 @@ class Color
 
         $this->din99 = $this::labToDin99($this->getLab());
         return $this->din99;
+    }
+
+    /**
+     * Calculares the visual difference between two Colors.
+     *
+     * The quality of the euklidian distance of DIN-99 colors can be compared to CIEDE2000.
+     *
+     * @param  Color $color
+     * @return float
+     */
+    public function getDifference($color)
+    {
+        $c1 = $this->getDin99();
+        $c2 = $color->getDin99();
+
+        return sqrt(($c2["L99"] - $c1["L99"])**2 +
+                        ($c2["a99"] - $c1["a99"])**2 +
+                        ($c2["b99"] - $c1["b99"])**2);
     }
 
     // -------------------------------------------------------------------------------------------
