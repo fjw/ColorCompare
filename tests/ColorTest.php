@@ -69,6 +69,9 @@ class ColorTest extends TestCase
         $this->assertEquals(-12.22, round($color->getDin99()["b99"], 2));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testConvertToHSLandBack()
     {
         $hex = "#ff00aa";
@@ -82,6 +85,9 @@ class ColorTest extends TestCase
         $this->assertEquals($hex, $c2->getHex());
     }
 
+    /**
+     * @throws Exception
+     */
     public function testConvertToLABandBack()
     {
         $hex = "#ff00aa";

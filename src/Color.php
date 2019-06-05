@@ -22,7 +22,7 @@ class Color
      *  - a CIELAB color array, example: ["L" => 100, "a" => -120, "b" => 75]
      *
      * @param  string|array  $value
-     * @throws  Exception
+     * @throws  Exception  if the value parameter can't be interpreted as a valid color format
      */
     public function __construct($value)
     {
@@ -73,7 +73,7 @@ class Color
      * Validates and sets the color from a Hex color.
      *
      * @param  string  $hex
-     * @throws  Exception
+     * @throws  Exception  if the hex format is invalid
      */
     private function setHex($hex)
     {
@@ -101,7 +101,7 @@ class Color
      * Validates and sets the color from a RGB color.
      *
      * @param  array  $rgb
-     * @throws  Exception
+     * @throws  Exception  if the array dosn't contain a valid RGB color
      */
     private function setRgb($rgb)
     {
@@ -123,7 +123,7 @@ class Color
      * Validates and sets the color from a HSL color.
      *
      * @param  array  $hsl
-     * @throws  Exception
+     * @throws  Exception  if the array dosn' contain a valid HSL color
      */
     private function setHsl($hsl)
     {
@@ -145,7 +145,7 @@ class Color
      * Validates and sets the color from a LAB color.
      *
      * @param  array  $lab
-     * @throws  Exception
+     * @throws  Exception  if the array dosn' contain a valid LAB color
      */
     private function setLab($lab)
     {
