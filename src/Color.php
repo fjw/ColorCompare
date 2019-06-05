@@ -583,7 +583,7 @@ class Color
         $a = $lab["a"];
         $b = $lab["b"];
 
-        if ($a === 0 && $b === 0) {
+        if (round($a) == 0 && round($b) == 0) {
 
             $a99 = 0;
             $b99 = 0;
@@ -596,6 +596,7 @@ class Color
             $e = $a * $cos16 + $b * $sin16;
             $f = 0.7 * ($b * $cos16 - $a * $sin16);
             $g = 0.045 * sqrt($e ** 2 + $f ** 2);
+
             $k = log(1 + $g) / $g;
 
             $a99 = $k * $e;

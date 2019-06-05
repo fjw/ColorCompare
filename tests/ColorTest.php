@@ -108,4 +108,12 @@ class ColorTest extends TestCase
 
         $this->assertEquals(62.75, round($color1->getDifference($color2), 2));
     }
+
+    public function testGetDifference2()
+    {
+        $color1 = new Color("#fff");
+        $color2 = new Color("#000");
+
+        $this->assertEquals(100, round($color1->getDifference($color2), 2));
+    }
 }
