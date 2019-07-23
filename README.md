@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.com/fjw/ColorCompare.svg?branch=master)](https://travis-ci.com/fjw/ColorCompare)
 
-ColorCompare is a library to convert colors from hex, RGB, HSL, CIE L\*a\*b\* (LAB) and DIN-99 into one another and calculate color distances (human visual difference).
+ColorCompare is a library to convert colors from hex, RGB, HSL, CIE L\*a\*b\* (LAB) and DIN-99 into one another and calculate color distances (human visual difference) using the DIN-99 methedology.
 
 
 You can get the library from [packagist](https://packagist.org/packages/fjw/color-compare):
@@ -14,7 +14,7 @@ composer require fjw/color-compare
 
 ## How to use
 
-You can get the visual difference (distance) of two colors easily:
+You can get the DIN-99 visual difference (distance) of two colors easily:
 ```php
 use ColorCompare\Color;
 
@@ -51,7 +51,7 @@ $hex = $color->getHex();
 ```
 
 ## Visual Color Distance with DIN-99
-DIN-99 differences can better calculate the human visual difference than LAB with delta-E. There are also superior distance calculations like CIE94 or CIEDE2000 but these are complicated and need intensive calculations.
+DIN-99 differences, returned by Color::getDifference(), can better calculate the human visual difference  than LAB with delta-E. There are also superior distance calculations like CIE94 or CIEDE2000 but these are complicated and need intensive calculations.
 With DIN-99 the calculation is done beforehand and needs less ressources. When your color is already converted into DIN-99 you can just calculate the euklidean distance and get the same quality.
 
 ```php
